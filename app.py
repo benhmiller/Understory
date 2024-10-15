@@ -1,21 +1,15 @@
-from dotenv import load_dotenv
-from openai import OpenAI
-import os
+import json
+import pandas as pd
 
-# Load the environment variables from the .env file
-load_dotenv()
+# Load your JSON data (assuming you have it in a file)
+with open('textract_output.json', 'r') as json_file:
+    data = json.load(json_file)
 
-# Set API Key and model
-MODEL = "gpt-4o-mini"
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Extract blocks from the JSON data
+blocks = data['Blocks']
 
-def send_text_to_gpt(text):
-    response = client.chat.completions.create(model="gpt-4",
-    messages=[
-        {"role": "system", "content": "You are an AI that extracts key fields from insurance loss runs."},
-        {"role": "user", "content": text}
-    ])
-    return response.choices[0].message.content
+# Convert blocks to a DataFrame
+df = pd.DataFrame(blocks)
 
-if __name__ == "__main__":
-     send_text_to_gpt("TEST")
+# Display the DataFrame
+print(df.head())

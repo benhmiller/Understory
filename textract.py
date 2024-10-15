@@ -1,5 +1,10 @@
+from dotenv import load_dotenv
 import boto3
 import time
+import json
+import os
+# Load the environment variables from the .env file
+load_dotenv()
 
 # Initialize Textract client
 textract = boto3.client('textract', region_name='us-east-1')
@@ -8,7 +13,7 @@ textract = boto3.client('textract', region_name='us-east-1')
 response = textract.start_document_text_detection(
     DocumentLocation={
         'S3Object': {
-            'Bucket': 'understorysubmissionsbucket',
+            'Bucket': os.getenv("BUCKET"),
             'Name': 'Dealer Loss History 3-YEAR.pdf'
         }
     }
@@ -33,6 +38,11 @@ while True:
 # If the job succeeded, access the blocks
 if status == 'SUCCEEDED':
     blocks = response['Blocks']
-    print("Blocks:", blocks)
+
+    # Save blocks to a JSON file
+    with open('textract_output.json', 'w') as json_file:
+        json.dump(blocks, json_file, indent=4)  # Save with indentation for readability
+
+    print("Blocks saved to textract_output.json")
 else:
     print("Job failed.")
