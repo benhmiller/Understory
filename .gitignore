@@ -7,5 +7,8 @@ notes
 # Ignore virtual environment (can be reloaded via requirements.txt)
 venv
 
+# Ignore Loss Runs Folder
+loss_runs
+
 # Ignore Output
 textract_output.json
