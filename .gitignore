@@ -9,6 +9,7 @@ venv
 
 # Ignore Loss Runs Folder
 loss_runs
+merged_loss_runs.csv
 
 # Ignore Output
 textract_output.json
