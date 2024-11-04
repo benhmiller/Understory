@@ -6,8 +6,10 @@ notes
 
 # Ignore virtual environment (can be reloaded via requirements.txt)
 venv
+UnderstoryVenv
 
 # Ignore Loss Runs Folder
+samples
 loss_runs
 merged_loss_runs.csv
 
