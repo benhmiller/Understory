@@ -4,8 +4,10 @@ from extraction_utils.documentai_utils import (
     process_pdf,
     table_extraction
 )
+from typing import List
+import pandas as pd
 
-def documentai_process_pdf(file_path: str):
+def documentai_process_pdf(file_path: str) -> List[pd.Dataframe]:
     # Initialize document AI client
     client = get_client()
     name = get_processor_name(client)
@@ -14,6 +16,7 @@ def documentai_process_pdf(file_path: str):
     # Process Document
     document = process_pdf(client, name, file_path, mime_type)
     tables = table_extraction(document)
-    for table in tables:
-        print(table)
-        
+    # for table in tables:
+    #     print(table)
+    
+    return tables
