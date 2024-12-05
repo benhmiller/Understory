@@ -34,7 +34,7 @@ def get_processor_name(client: docai.DocumentProcessorServiceClient) -> str:
     '''
     return client.processor_path(PROJECT_ID, API_LOCATION, PROCESSOR_ID)
 
-def process_file(
+def process_pdf(
     client: docai.DocumentProcessorServiceClient,
     name: str,
     file_path: str,
