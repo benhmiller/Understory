@@ -7,7 +7,7 @@ from extraction_utils.documentai_utils import (
 from typing import List
 import pandas as pd
 
-def documentai_process_pdf(file_path: str) -> List[pd.Dataframe]:
+def documentai_process_pdf(file_path: str) -> List[pd.DataFrame]:
     # Initialize document AI client
     client = get_client()
     name = get_processor_name(client)
