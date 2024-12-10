@@ -3,6 +3,11 @@ from gmft.auto import AutoTableDetector, AutoTableFormatter, AutoFormatConfig
 from typing import List
 import pandas as pd
 
+'''
+Handler for PDF table extraction with gmft library
+
+See https://gmft.readthedocs.io/en/latest/index.html
+'''
 def gmft_process_pdf(file_path: str) -> List[pd.DataFrame]:
     # Open Document
     doc = PyMuPDFDocument(file_path)

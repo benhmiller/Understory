@@ -8,7 +8,7 @@ import pandas as pd
 PROJECT_ID = 'verdant-cargo-443521-j3' #os.getenv("PROJECT_ID", "")
 API_LOCATION = 'us' # os.getenv("API_LOCATION", "")
 PROCESSOR_ID = 'f2db9bcc34ed8bb5' # os.getenv("PROCESSOR_ID", "")
-CREDENTIAL_FILE_PATH = "../secret/verdant-cargo-443521-j3-8d56893a2e2e.json" # os.getenv("CREDENTIAL_FILE_PATH", "")
+CREDENTIAL_FILE_PATH = "../secret/project_key.json" # os.getenv("CREDENTIAL_FILE_PATH", "")
 
 assert PROJECT_ID, "PROJECT_ID is undefined"
 assert API_LOCATION in ("us", "eu"), "API_LOCATION is incorrect"

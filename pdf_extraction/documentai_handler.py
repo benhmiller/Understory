@@ -1,12 +1,18 @@
+from typing import List
+import pandas as pd
 from extraction_utils.documentai_utils import (
     get_client, 
     get_processor_name, 
     process_pdf,
     table_extraction
 )
-from typing import List
-import pandas as pd
 
+
+'''
+Handler for PDF table extraction with Google's Document AI
+
+See https://cloud.google.com/document-ai?hl=en
+'''
 def documentai_process_pdf(file_path: str) -> List[pd.DataFrame]:
     # Initialize document AI client
     client = get_client()

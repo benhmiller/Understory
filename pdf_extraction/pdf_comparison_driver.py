@@ -1,6 +1,7 @@
 from documentai_handler import documentai_process_pdf
 from gmft_handler import gmft_process_pdf
 from camelot_handler import camelot_process_pdf
+
 '''
 File to run and compare PDF table extraction performed by Google Document AI, camelot, and gmft
 '''
