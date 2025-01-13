@@ -16,7 +16,6 @@ if __name__ == '__main__':
         # Call Local PDF Processors
         gmft_tables = gmft_process_pdf(file_path)
         #camelot_tables = camelot_process_pdf(file_path)
-        
 
         # Compare Outputs
         # ...
